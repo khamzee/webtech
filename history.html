@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour History</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #e0f7fa; 
+      min-height: 100vh; 
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      background-color: #5fc1ce; 
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+      flex: 1;
+    }
+
+    footer {
+      background-color: #95cfe0;
+      color: #c62c2c;
+      padding: 10px 0;
+      width: 100%;
+      text-align: center;
+      margin-top: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="/">DREAM VOYAGE</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/index.html">Home</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h2>Tour History</h2>
+    <ul id="history-list"></ul>
+    <p id="total-cost"></p> 
+  </div>
+
+  <footer class="text-center py-3">
+    <p class="mb-0">Directed by Khamze Daniyar SE-2209</p>
+  </footer>
+
+  <script>
+    const fetchTourHistory = () => {
+      fetch('/travelagency/history')
+        .then(response => response.json())
+        .then(data => {
+          const historyList = document.getElementById('history-list');
+          historyList.innerHTML = '';
+  
+          // Create a row container
+          const row = document.createElement('div');
+          row.className = 'row';
+  
+          data.history.forEach((tour, index) => {
+            // Create a column for each tour
+            const col = document.createElement('div');
+            col.className = 'col-md-4 mb-3'; // Adjust the column size as needed
+  
+            // Create the card
+            const card = document.createElement('div');
+            card.className = 'card';
+            
+            // Format dates and timestamp
+            const arrivalDate = new Date(tour.arrivalDate).toLocaleString();
+            const departureDate = new Date(tour.departureDate).toLocaleString();
+            const timestamp = new Date(tour.timestamp).toLocaleString();
+  
+            card.innerHTML = `
+              <div class="card-body">
+                <h5 class="card-title">${tour.tour}</h5>
+                <p class="card-text">
+                  <strong>Hotel:</strong> ${tour.hotel}<br>
+                  <strong>Car Rental:</strong> ${tour.carRental}<br>
+                  <strong>Arrival Date:</strong> ${arrivalDate}<br>
+                  <strong>Departure Date:</strong> ${departureDate}<br>
+                  <strong>Adults:</strong> ${tour.adults}<br>
+                  <strong>Children:</strong> ${tour.children}<br>
+                  <strong>Tour Cost:</strong> $${tour.tourCost}<br>
+                  <strong>Weather:</strong> ${tour.weather}<br>
+                  <strong>Timestamp:</strong> ${timestamp}
+                </p>
+                <button class="btn btn-danger" onclick="deleteTour('${tour._id}')">Delete</button>
+              </div>
+            `;
+  
+            // Append the card to the column
+            col.appendChild(card);
+  
+            // Append the column to the row
+            row.appendChild(col);
+          });
+  
+          // Append the row to the historyList
+          historyList.appendChild(row);
+  
+        })
+        .catch(error => console.error('Error fetching tour history:', error));
+    };
+  
+    const deleteTour = (tourId) => {
+      fetch(`/travelagency/${tourId}`, { method: 'DELETE' })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data.message);
+          fetchTourHistory();
+        })
+        .catch(error => console.error('Error deleting tour:', error));
+    };
+  
+    fetchTourHistory();
+  </script>  
+  
+</body>
+
+</html>

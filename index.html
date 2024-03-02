@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DREAM VOYAGE</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #e0f7fa; 
+            min-height: 100vh; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            background-color: #95cfe0; 
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            flex: 1;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            max-height: 200px; 
+            object-fit: cover; 
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #01579b; /
+        }
+
+        .card-text {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        footer {
+            background-color: #95cfe0;
+            color: #c62c2c;
+            padding: 10px 0;
+            width: 100%;
+            text-align: center;
+            margin-top: auto; 
+        }
+    </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <a class="navbar-brand text-white" href="/">DREAM VOYAGE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="/travelagency.html">Book Now</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="/signup.html">Sigh Up</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  
+
+    <div class="container">
+        <h2 class="text-center mb-4">Welcome to Dream Voyage</h2>
+
+    <div class="card-deck">
+      <div class="card">
+        <img src="paris.jpg" class="card-img-top" alt="Paris Image">
+        <div class="card-body">
+          <h5 class="card-title">Paris, France</h5>
+          <p class="card-text">Cost: $1000</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="rome.jpg" class="card-img-top" alt="Rome Image">
+        <div class="card-body">
+          <h5 class="card-title">Rome, Italy</h5>
+          <p class="card-text">Cost: $1200</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="tokyo.jpg" class="card-img-top" alt="Tokyo Image">
+        <div class="card-body">
+          <h5 class="card-title">Tokyo, Japan</h5>
+          <p class="card-text">Cost: $1500</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-deck mt-3">
+      <div class="card">
+        <img src="bali.jpg" class="card-img-top" alt="Bali Image">
+        <div class="card-body">
+          <h5 class="card-title">Bali, Indonesia</h5>
+          <p class="card-text">Cost: $800</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="cancun.jpg" class="card-img-top" alt="Cancun Image">
+        <div class="card-body">
+          <h5 class="card-title">Cancun, Mexico</h5>
+          <p class="card-text">Cost: $1200</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="astana.jpg" class="card-img-top" alt="Punta Cana Image">
+        <div class="card-body">
+          <h5 class="card-title">Astana,Kazakhstan</h5>
+          <p class="card-text">Cost: $1000</p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <footer class="text-center py-3">
+      <p class="mb-0">Directed by Khamze Daniyar SE-2209</p>
+    </footer>
+
+  </div>
+</body>
+
+</html>

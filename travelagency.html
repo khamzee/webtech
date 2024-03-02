@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Agency</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+  <style>
+    body {
+        background-color: #e0f7fa; 
+        min-height: 100vh; 
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar {
+        background-color: #5fc1ce; 
+    }
+
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        flex: 1;
+    }
+    footer {
+        background-color: #95cfe0;
+        color: #c62c2c;
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+        margin-top: auto;
+    }
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+<a class="navbar-brand" href="/">DREAM VOYAGE</a>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="/history.html">History</a>
+    </li>
+  </ul>
+</div>
+</nav>
+</nav>
+
+  <div class="container mt-5">
+    <h2>Book Your Tour</h2>
+    <form action="/travelagency" method="post">
+      <div class="form-group">
+        <label for="tour">Tour:</label>
+        <select class="form-control" id="tour" name="tour" required>
+          <option value="Paris">Paris, France</option>
+          <option value="Rome">Rome, Italy</option>
+          <option value="Tokyo">Tokyo, Japan</option>
+          <option value="Bali">Bali, Indonesia</option>
+          <option value="Cancun">Cancun, Mexico</option>
+          <option value="Astana">Astana,Kazakhstan</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="hotel">Hotel:</label>
+        <input type="text" class="form-control" id="hotel" name="hotel" required>
+      </div>
+      <div class="form-group">
+        <label for="carRental">Car Rental:</label>
+        <select class="form-control" id="carRental" name="carRental">
+          <option value="none">No Car Rental</option>
+          <option value="standard">Standard Car</option>
+          <option value="luxury">Luxury Car</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="arrivalDate">Arrival Date:</label>
+        <input type="date" class="form-control" id="arrivalDate" name="arrivalDate" required>
+      </div>
+      <div class="form-group">
+        <label for="departureDate">Departure Date:</label>
+        <input type="date" class="form-control" id="departureDate" name="departureDate" required>
+      </div>
+      <div class="form-group">
+        <label for="adults">Adults:</label>
+        <input type="number" class="form-control" id="adults" name="adults" required>
+      </div>
+      <div class="form-group">
+        <label for="children">Children:</label>
+        <input type="number" class="form-control" id="children" name="children" required>
+      </div>
+      <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary">Show Tour</button>
+      </div>    
+    </form>
+  </div>
+  <footer class="text-center py-3">
+    <p class="mb-0">Directed by Khamze Daniyar SE-2209</p>
+  </footer>
+
+</body>
+</html>
